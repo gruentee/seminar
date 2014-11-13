@@ -25,7 +25,7 @@ public class VokalZaehler {
 		}
 		
 		System.out.println("Anzahl aller Vokale in '" + zeichenKette + "': " + anzahlVokale);
-		return 0;
+		return anzahlVokale;
 	}
 
 }
