@@ -17,7 +17,7 @@ public class VokalZaehler {
 			} else if (buchstabe == 'i') {	// Natürlich ist diese Lösung
 				anzahlVokale++;				// sehr unschön - da wir aber
 			} else if (buchstabe == 'o') {	// zu diesem Zeitpunkt noch
-				anzahlVokale++;				// keine Schleifen benutzt haben,
+				anzahlVokale++;				// keine Aussagenlogik o.ä. benutzt haben,
 			} else if (buchstabe == 'u') { 	// ist die eine der möglichen
 				anzahlVokale++;				// "Notlösungen".
 			}
@@ -27,5 +27,6 @@ public class VokalZaehler {
 		System.out.println("Anzahl aller Vokale in '" + zeichenKette + "': " + anzahlVokale);
 		return anzahlVokale;
 	}
-
+	
+	
 }
