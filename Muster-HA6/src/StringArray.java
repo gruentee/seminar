@@ -99,4 +99,46 @@ public class StringArray {
 	
 	
 	
+	//////// METHODEN HA 6 ////////
+	
+	/**
+	 * Lösung: Mittels einer for-Schleife wird das array Schritt für Schritt
+	 * durchsucht. Sobald ein Wert mit dem gesuchten String übereinstimmt,
+	 * wirt TRUE zurückgegeben. Falls das bis zum Ende nicht passiert,
+	 * wird FALSE zurückgegeben.
+	 */
+	public boolean contains(String string) {
+		for (String s : array){
+			if (s != null && s.equals(string)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * Lösung: Die Variable "nextInsert", welche den Index der nächsten zum Überschreiben
+	 * markierten Stelle im Array enthält, wird einfach um 1 reduziert. Das "löscht" zwar
+	 * den eigentlichen Wert nicht direkt, macht ihn aber nach außen hin unsichtbar und er
+	 * wird beim nächsten Aufruf von add() überschireben.
+	 * Sonderfall: Wenn nextInsert == 0, ist das Array leer und es ändert sich nichts.
+	 */
+	public void deleteLast(){
+		if (nextInsert > 0){
+			nextInsert--;
+		}
+	}
+
+	/**
+	 * Lösung: Um eine bestimmte Stelle aus dem Array zu löschen, werden einfach alle darauf
+	 * folgenden Stellen um einen Index nach vorne kopiert. Dadurch wird der zu löschende Wert überschrieben.
+	 * Am Ende wir noch der Wert von nextInsert um 1 reduziert, da der aktive Wertebereich des Arrays kleiner geworden ist.
+	 */
+	public void delete(int position){
+		for (int i = position+1; i < array.length; i++) {
+			array[i-1] = array[i];
+		}
+		nextInsert--;
+	}
+	
 }
